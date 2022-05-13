@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         run();
-        System.out.println("Number of drinks: " + Drink.count);
+        System.out.println("Thank you! Number of drinks: " + Drink.count);
 
 
     }
@@ -20,13 +20,13 @@ public class Main {
             while (!stop) {
                 String str;
                 System.out.println("Select your drinks or type \"stop\" to finish");
-                str = scanner.next();
+                str = scanner.next().toUpperCase();
                 try {
                     drinksMachine = DrinksMachine.valueOf(str);
 
                     break;
                 } catch (IllegalArgumentException e) {
-                    stop = str.equals("stop");
+                    stop = str.equals("STOP");
                 }
             }
             if (stop) {
